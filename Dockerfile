@@ -24,4 +24,4 @@ RUN pip install uwsgi  # Instalando o uWSGI
 COPY . /app/
 
 # Definir o comando para iniciar a aplicação com uWSGI
-CMD ["uwsgi", "--http", "0.0.0.0:5000", "--wsgi-file", "app.py", "--master", "--processes", "10", "--threads", "2"]
+CMD ["uwsgi", "--http", "0.0.0.0:5000", "-w", "app:app", "--master", "--processes", "10", "--threads", "2"]
