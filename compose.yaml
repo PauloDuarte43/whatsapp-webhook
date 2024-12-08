@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: whatsapp-webhook
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - .:/app
+    networks:
+      - shared-network
+
+networks:
+  shared-network:
+    external: true
